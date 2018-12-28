@@ -1,4 +1,4 @@
-FROM php:7.3-fpm-alpine
+FROM php:7.3-cli-alpine
 RUN apk update && apk add --no-cache \
         freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev \
         icu-libs icu-dev \
