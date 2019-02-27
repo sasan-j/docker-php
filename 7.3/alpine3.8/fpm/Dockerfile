@@ -11,6 +11,7 @@ RUN apk update && apk add --no-cache \
         --with-png-dir=/usr/include/ \
         --with-jpeg-dir=/usr/include/ \
     && NPROC=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) \
-    && docker-php-ext-install -j${NPROC} gd intl soap bcmath pdo pdo_pgsql pgsql zip\
+    && docker-php-ext-install -j${NPROC} gd intl soap bcmath pdo \
+        pdo_pgsql pgsql zip sockets\
     && apk del freetype-dev libpng-dev libjpeg-turbo-dev libxml2-dev icu-dev \
         postgresql-dev zlib-dev libzip-dev
